@@ -147,12 +147,12 @@ public class Credit extends Account {
 		System.out.println("the interest amount to be deposited for the amount"+camount+"is "+interest);
 		System.out.print("Enter the amount to be deposited : ");
 		amt=scn.nextInt();
-		System.out.println("the amount "+amt+" has been deposited you are due with "+((camount+interest)-amt));
+		System.out.println("the amount "+amt+" has been deposited. You are due with "+((camount+interest)-amt));
 		camount += amt;
 		if(camount>=temp)
 		{
 			camount= camount -temp;
-			System.out.println("You have succesfullly repayed your loan");
+			System.out.println("You have succesfullly repaid your loan");
 		}
 	}
 	void withdrawal() {
