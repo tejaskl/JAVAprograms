@@ -19,7 +19,7 @@ public class Cipher {
 		case 2 : Decoding str2 = new Decoding();
 				 str2.decode(a); 
 				 break;
-		default :System.out.println("Stop pannification");
+		default :System.out.println("Invalid Input!.");
 		
 		}
 	}
