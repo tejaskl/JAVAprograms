@@ -15,7 +15,7 @@ public class BankManagement {
 		
 		while(i<5) {
 			
-		System.out.println("press 1 for savings account \npress 2 for credits account");
+		System.out.println("Press 1 for savings account \npress 2 for credits account");
 		int a=scn.nextInt();
 		x=true;
 		
@@ -23,7 +23,7 @@ public class BankManagement {
 		case 1 : 
 				 while(x) {
 					 
-					 System.out.println("press 1 to create account \npress 2 for depositing \npress 3 for withdrawal \npress 4 for \"Minnie\" statement \npress 5 to return back to main menu");
+					 System.out.println("Press 1 to create account \npress 2 for depositing \npress 3 for withdrawal \npress 4 for mini statement \npress 5 to return back to main menu");
 					 int b=scn.nextInt();
 				 
 					 switch(b) {
@@ -40,14 +40,14 @@ public class BankManagement {
 				 		case 4 :  if(gatherSAccountInfo())
 		 		  		  			display(obj1[g].toString());break;
 				 		case 5 : x=false;break;	 
-				 		default : System.out.println("clearly you haven't been to school");
+				 		default : System.out.println("Invalid operation.!");
 					 }
 				}
 				 break;
 		case 2: 
 			 	while(x) {
 			 		
-			 		System.out.println("press 1 to create account \npress 2 to credit money with the interest rate 8% \npress 3 for deposit \npress 4 for cash withradawal \npress 5 for \"Minnie\" statement \npress 6 to return back to main menu");
+			 		System.out.println("Press 1 to create account \nPress 2 to credit money with the interest rate 8% \nPress 3 for deposit \npress 4 for cash withradawal \npress 5 for mini statement \npress 6 to return back to main menu");
 			 		int b=scn.nextInt();
 			 		
 			 		switch(b) {
@@ -65,12 +65,12 @@ public class BankManagement {
 			 			case 5 : if(gatherCAccountInfo())
 			 						display(obj[h].toString());break;
 			 			case 6 : x=false;break;	 
-			 			default : System.out.println("clearly you haven't been to school");
+			 			default : System.out.println("Invalid operation.!");
 			 		}
 			 	}
 			 break;
 			
-		default:  System.out.println("clearly you haven't been to school");
+		default:  System.out.println("Invalid operation.!");
 			
 		}
 		
@@ -123,15 +123,14 @@ public class Account {
 	public int camount =0;
 	
 	int createAccount() {
-	System.out.println("Enter your beautiful name: ");
+	System.out.println("Enter your name: ");
 	name=scn.nextLine(); 
-	System.out.println("Enter your beautiful account number cause we don't provide it: ");
+	System.out.println("Enter your account number : ");
 	acc_no = scn.nextInt(); 
 	System.out.println("Enter your branch : ");
 	branch = scn.next();
 	return acc_no;
 	}	
-	
 	
 }
 
@@ -139,7 +138,7 @@ public class Credit extends Account {
 	int temp;
 	int amt,required_amount,interest;
 	void add(){
-		System.out.println("enter the amount to be credited  : " );
+		System.out.println("Enter the amount to be credited  : " );
 		required_amount=scn.nextInt();
 		camount += required_amount;
 	}
@@ -162,7 +161,7 @@ public class Credit extends Account {
 			camount -= amt;
 			System.out.println("the amount "+amt+" has been withdrawn and balance is "+camount);
 	}
-	else System.out.println("KAAS ILLA MAMA !!!!!! you beggar");		
+	else System.out.println("Insufficient Balance");		
 	}
 	public String toString() {
      return "name="+name+"\n"+"Account no="+acc_no+"\n"+"Branch="+branch+"Balance="+camount;
@@ -192,7 +191,7 @@ public class Savings extends Account{
 				samount -= amt;
 				System.out.print("the amount "+amt+" has been withdrawn.");
 		}
-		else System.out.println("KAAS ILLA MAMA !!!!!! you beggar");
+		else System.out.println("Insufficient Balance");
 	}
 	
 	void interest() {
@@ -202,7 +201,6 @@ public class Savings extends Account{
 	     return "name="+name+"\n"+"Account no="+acc_no+"\n"+"Branch="+branch+"\n"+"Balance="+samount;
 		}
 	
-
 }
 
 
